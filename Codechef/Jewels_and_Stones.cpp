@@ -4,14 +4,6 @@
 #include<string>
 using namespace std;
 
-void Input_Array(int *array, int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		cin >> array[i];
-	}
-}
-
 int main()
 {
 	int t=0,T;
