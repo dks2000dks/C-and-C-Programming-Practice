@@ -5,12 +5,6 @@
 #include<string>
 using namespace std;
 
-int Check_Prime(int n)
-{
-
-}
-
-
 int Print_Primes(int a,int b)
 {
 	for (int n = a; n < b + 1;n++)
