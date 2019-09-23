@@ -3,6 +3,7 @@
 #include<algorithm>
 #include<vector>
 #include<string>
+#include<bits/stdc++.h>
 using namespace std;
 
 void Input_Array(int *array, int size)
@@ -24,7 +25,7 @@ void Print_Array(int *array, int size)
 int Count_Find(string str,char find)
 {
 	int size = str.length();
-	int o =;
+	int o = 0;
 	for (int i = 0;i < size; i++)
 	{
 		if (find == str[i])
@@ -145,4 +146,33 @@ int Find_Index(int *array, int size,int find)
 	}
 
 	return o;
+}
+
+int Fibonacci(int N)
+{
+	int o[N];
+
+	o[0] = 0;
+	o[1] = 1;
+
+	for(int i=2;i<N;i++)
+	{
+		o[i] = o[i-1] + o[i-2];
+	}
+
+	return o;
+}
+
+int IsPrime(int n) 
+{
+	int o=1;
+
+	if (n%2 == 0 && n!= 2) 
+		o = 0;
+  
+	for (int i = 3; i < sqrt(n) + 1; i = i+2) 
+		if (n % i == 0) 
+			o = 0; 
+  
+    return o; 
 }
