@@ -10,7 +10,7 @@ int main()
 	int T;
 	cin >> T;
 
-	while(T--)
+	while(T--) 
 	{
 		string input;
 		cin >> input;
