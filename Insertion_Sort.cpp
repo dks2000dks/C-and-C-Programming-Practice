@@ -1,14 +1,6 @@
 #include<iostream>
 using namespace std;
 
-void swap(int &a, int &b)
-{
-	int s;
-	s = a;
-	a = b;
-	b = s;
-}
-
 void Input_Array(int *array, int size)
 {
 	for (int i = 0; i < size; i++)
@@ -27,20 +19,21 @@ void Print_Array(int *array, int size)
 }
 
 
-void Selection_Sort(int *array, int size)
+void Insertion_Sort(int *array, int size)
 {
-	int i, j, imin;
+	int i, j, min;
 	
-	for(i = 0; i<size-1; i++)
+	for(i = 1; i<size; i++)
 	{
-		imin = i;
+		min = array[i];
+		j = i-1;
 
-		for(j = i+1; j<size; j++)
+		while(j>=0 && array[j] > min)
         {
-        	if(array[j] < array[imin])
-            	imin = j;
+        	array[j+1] = array[j];
+        	j = j-1;
 		}
-		swap(array[i], array[imin]);
+		array[j+1] = min;
 	}
 }
 
@@ -52,6 +45,6 @@ int main ()
 	int a[n];
 	
 	Input_Array(a,n);
-	Selection_Sort(a,n);
+	Insertion_Sort(a,n);
 	Print_Array(a,n);
 }
