@@ -3,6 +3,7 @@
 #include<algorithm>
 #include<vector>
 #include<string>
+#include <bitset>
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -35,6 +36,15 @@ int Count_Find(string str,char find)
 	}
 
 	return o;
+}
+
+char XOR(char a,char b)
+{
+	if ((a == '0' && b == '0') || (a == '1' && b == '1'))
+		return '0';
+	else
+		return '1';
+
 }
 
 void Multiply_Element_Array(int *array, int size, int m)
