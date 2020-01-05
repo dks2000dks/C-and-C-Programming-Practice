@@ -186,3 +186,77 @@ int IsPrime(int n)
   
     return o; 
 }
+
+int Input_Matrix(vector< vector<int> > &mat, int n, int m)
+{
+	int x;
+	for (int i=0;i<n;i++)
+	{
+		for (int j=0;j<m;j++)
+		{
+			cin >> x;
+			mat[i][j] = x;
+		}
+	}
+}
+
+int Transpose_Matrix(vector< vector<int> > &mato, vector< vector<int> > &matt, int n, int m)
+{
+	int x;
+	for (int i=0;i<m;i++)
+	{
+		for (int j=0;j<n;j++)
+		{
+			x = mato[j][i];
+			matt[i][j] = x;
+		}
+	}
+}
+
+int Output_Matrix(vector< vector<int> > &mat, int n, int m)
+{
+	int x;
+	for (int i=0;i<n;i++)
+	{
+		for (int j =0;j<m;j++)
+		{
+			cout << mat[i][j] << " ";
+		}
+
+		cout << endl;
+	}
+}
+
+int Sum_elements_Vector(vector<int> array, int size)
+{
+	int o = 0;
+	for (int i = 0; i < size; i++)
+	{
+		o += array[i];
+	}
+
+	return o;
+}
+
+int Elemental_Multiply_Sum_Vector(vector<int> array1, vector<int> array2)
+{
+	int size1 = array1.size();
+	int size2 = array2.size();
+	int size;
+
+	if (size1 == size2)
+		size = size1;
+	else
+	{
+		cout << "Sizes Clash" << endl;
+		cout << array1.size() << ", " << array2.size() << endl;
+	}
+
+	int o = 0;
+	for (int i = 0; i < size; i++)
+	{
+		o += array1[i] * array2[i];
+	}
+
+	return o;
+}
