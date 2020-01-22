@@ -21,6 +21,8 @@ void Print_Array(int *array, int size)
 	{
 		cout << array[i] << " ";
 	}
+
+	cout << endl;
 }
 
 int Count_Find(string str,char find)
@@ -259,4 +261,165 @@ int Elemental_Multiply_Sum_Vector(vector<int> array1, vector<int> array2)
 	}
 
 	return o;
+}
+
+
+void Input_Vector(vector<int> &array, int size)
+{
+	int x;
+	for (int i = 0; i < size; i++)
+	{
+		cin >> x;
+		array.push_back(x);
+	}
+}
+
+void Print_Vector(vector<int> &array, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << array[i] << " ";
+	}
+
+	cout << endl;
+}
+
+vector<int> SubVector(vector<int> const &v, int m, int n)
+{
+	auto first = v.begin() + m;
+	auto last = v.begin() + n + 1;
+	vector<int> vector(first, last);
+	return vector;
+}
+
+vector<int> MergeSort(vector<int> const &v, int n)
+{
+	int mid = n/2;
+	int x;
+	vector<int> output;
+
+	if (n > 1)
+	{
+		vector<int> input1 = SubVector(v,0,mid-1);
+		vector<int> input2 = SubVector(v,mid,n-1);
+		
+		int n1 = input1.size();
+		int n2 = input2.size();
+		
+		vector<int> output1 = MergeSort(input1,n1);
+		vector<int> output2 = MergeSort(input2,n2);
+		
+		int i=0,j=0;
+		while (i<n1 && j<n2)
+		{
+			if (output1[i] < output2[j])
+			{
+				x = output1[i];
+				i++;
+			}
+			
+			else
+			{
+				x = output2[j];
+				j++;
+			}
+
+			output.push_back(x);
+		}
+
+		while(i<n1 && j>=n2)
+		{
+			output.push_back(output1[i]);
+			i++;
+		}
+
+		while (i>=n1 && j<n2)
+		{
+			output.push_back(output2[j]);
+			j++;
+		}
+		
+	}
+
+	else
+	{
+		output = v;
+	}
+
+	return output;
+}
+
+vector<int> Max_Crossing_SubArray(vector<int> const &v, int l, int m, int h)
+{
+	int sum;
+	vector<int> output;
+
+	int leftsum = INT_MIN;
+	int ml;
+	sum=0;
+	for (int i=m;i>=l;i--)
+	{
+		sum += v[i];
+		if (sum > leftsum)
+		{
+			leftsum = sum;
+			ml = i;
+		}
+	}
+
+	int rightsum = INT_MIN;
+	int mr;
+	sum=0;
+	for (int i=m+1;i<=h;i++)
+	{
+		sum += v[i];
+		if (sum > rightsum)
+		{
+			rightsum = sum;
+			mr = i;
+		}
+	}
+
+	output.push_back(ml);
+	output.push_back(mr);
+	output.push_back(leftsum + rightsum);
+
+	return output;
+}
+
+vector<int> Max_SubArray(vector<int> const &v, int l, int h)
+{
+	vector<int> output;
+	if (h==l)
+	{
+		output.push_back(l);
+		output.push_back(h);
+		output.push_back(v[l]);
+	}
+
+	else
+	{
+		int m = (l+h)/2;
+		
+		vector<int> left = Max_SubArray(v,l,m);
+		vector<int> right = Max_SubArray(v,m+1,h);
+		vector<int> cross = Max_Crossing_SubArray(v,l,m,h);
+
+		if (left[2] >= right[2] && left[2] >= cross[2])
+		{
+			output =  left;
+		}
+
+		else if (right[2] >= left[2] && right[2] >= cross[2])
+		{
+			output =  right;
+		}
+
+		else
+		{
+			output =  cross;
+		}
+	}
+
+	return output;
 }
