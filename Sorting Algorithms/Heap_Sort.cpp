@@ -81,6 +81,8 @@ int main()
 	int n;
 	cin >> n;
 
+	// MaxHeap prints array in increasing order.
+	// Max Elements are inserted at the Last of the Array.
 	int Data[n];
 
 	Input_Array(Data,n);
