@@ -14,7 +14,46 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
-#define FOR(i, a, b) for (int i=a; i<=b; i++)
+#define FR(i, a, b) for (int i=a; i<=b; i++)
+
+// Version-1 for Input_Vector
+void Input_Vector(vector<int> &array, int size)
+{
+	int x;
+	for (int i = 0; i < size; i++)
+	{
+		cin >> x;
+		array.push_back(x);
+	}
+}
+
+// Version-2 for Input_Vector
+void Input_Vector(vector<int> &array, int size)
+{
+	int x;
+	for (int i = 0; i < size; i++)
+	{
+		cin >> array[i];
+	}
+}
+
+void Print_Vector(vector<int> &array, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << array[i] << " ";
+	}
+
+	cout << endl;
+}
+
+vector<int> SubVector(vector<int> const &v, int m, int n)
+{
+	auto first = v.begin() + m;
+	auto last = v.begin() + n + 1;
+	vector<int> vector(first, last);
+	return vector;
+}
 
 void Input_Array(int *array, int size)
 {
@@ -270,35 +309,6 @@ int Elemental_Multiply_Sum_Vector(vector<int> array1, vector<int> array2)
 	}
 
 	return o;
-}
-
-
-void Input_Vector(vector<int> &array, int size)
-{
-	int x;
-	for (int i = 0; i < size; i++)
-	{
-		cin >> x;
-		array.push_back(x);
-	}
-}
-
-void Print_Vector(vector<int> &array, int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		cout << array[i] << " ";
-	}
-
-	cout << endl;
-}
-
-vector<int> SubVector(vector<int> const &v, int m, int n)
-{
-	auto first = v.begin() + m;
-	auto last = v.begin() + n + 1;
-	vector<int> vector(first, last);
-	return vector;
 }
 
 vector<int> MergeSort(vector<int> const &v, int n)
