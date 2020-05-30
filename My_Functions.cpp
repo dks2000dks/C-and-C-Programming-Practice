@@ -43,7 +43,6 @@ void Print_Vector(vector<int> &array, int size)
 	{
 		cout << array[i] << " ";
 	}
-
 	cout << endl;
 }
 
