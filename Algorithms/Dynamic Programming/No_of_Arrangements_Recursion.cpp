@@ -14,7 +14,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
-#define FR(i, a, b) for (int i=a; i<=b; i++)
+#define fr(i, a, b) for (int i=a; i<=b; i++)
 
 void Print_Vector(vector<int> &array, int size)
 {
@@ -44,7 +44,7 @@ int Arrangements(vector<int> &inputs, int n)
 
 	int output=0;
 	
-	FR(i,0,inputs.size()-1)
+	fr(i,0,inputs.size()-1)
 	{
 		output += Arrangements(inputs,n-inputs[i]);
 	}

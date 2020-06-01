@@ -24,7 +24,7 @@ So (ABD) and (ACD) are their longest common subsequences.
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
-#define FR(i, a, b) for (int i=a; i<=b; i++)
+#define fr(i, a, b) for (int i=a; i<=b; i++)
 
 void Input_Vector(vector<int> &array, int size)
 {

@@ -16,7 +16,7 @@
 #include <bitset>
 #include<bits/stdc++.h>
 using namespace std;
-#define FR(i, a, b) for (int i=a; i<=b; i++)
+#define fr(i, a, b) for (int i=a; i<=b; i++)
 
 #define NIL -1
 #define MAX 100
@@ -38,11 +38,11 @@ int Arrangements(vector<int> &inputs, int n)
 
 	table[0] = 1;
 
-	FR (i,1,n)
+	fr (i,1,n)
 	{
 		int output=0;
 
-		FR(j,0,inputs.size()-1)
+		fr(j,0,inputs.size()-1)
 		{
 			if (i-inputs[j] >= 0)
 				output += table[i-inputs[j]];

@@ -14,7 +14,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
-#define FR(i, a, b) for (int i=a; i<=b; i++)
+#define fr(i, a, b) for (int i=a; i<=b; i++)
 
 void Print_Vector(vector<int> &array, int size)
 {
@@ -34,7 +34,7 @@ void diceRolls(int n,vector<int> &soFar)
 	else if (n>0)
 	{
 		n--;
-		FR(i,1,6)
+		fr(i,1,6)
 		{
 			soFar.push_back(i);
 			diceRolls(n,soFar);

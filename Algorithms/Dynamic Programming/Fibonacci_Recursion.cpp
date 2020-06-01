@@ -14,7 +14,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
-#define FOR(i, a, b) for (int i=a; i<=b; i++)
+#define fr(i, a, b) for (int i=a; i<=b; i++)
 
 int Fibonacci(int n)
 {

@@ -14,7 +14,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
-#define FR(i, a, b) for (int i=a; i<=b; i++)
+#define fr(i, a, b) for (int i=a; i<=b; i++)
 
 void Input_Vector(vector<string> &array, int size)
 {
@@ -40,7 +40,7 @@ void permute(std::vector<string> &v, std::vector<string> output)
 		Print_Vector(output,output.size());
 	else
 	{
-		FR(i,0,v.size()-1)
+		fr(i,0,v.size()-1)
 		{
 			string s = v[i];
 			v.erase(v.begin()+i,v.begin()+i+1);

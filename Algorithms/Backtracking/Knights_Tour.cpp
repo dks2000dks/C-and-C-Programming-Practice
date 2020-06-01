@@ -15,7 +15,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
-#define FR(i, a, b) for (int i=a; i<=b; i++)
+#define fr(i, a, b) for (int i=a; i<=b; i++)
 
 #define N 8
 
@@ -44,7 +44,7 @@ bool KTExplore(int x, int y, int movecount, vector<vector<int>> &output, const v
 	if (movecount == N*N)
 		return true;
 
-	FR(i,0,7)
+	fr(i,0,7)
 	{
 		nextx = x + xMove[i];
 		nexty = y + yMove[i];

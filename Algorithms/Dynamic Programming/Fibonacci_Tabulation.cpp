@@ -16,7 +16,7 @@
 #include <bitset>
 #include<bits/stdc++.h>
 using namespace std;
-#define FR(i, a, b) for (int i=a; i<=b; i++)
+#define fr(i, a, b) for (int i=a; i<=b; i++)
 
 int Fibonacci(int n)
 {
@@ -24,7 +24,7 @@ int Fibonacci(int n)
 	f[0] = 0;
 	f[1] = 1;
 
-	FR(i,2,n)
+	fr(i,2,n)
 	{
 		f[i] = f[i-1] + f[i-2];
 	}

@@ -15,7 +15,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
-#define FR(i, a, b) for (int i=a; i<=b; i++)
+#define fr(i, a, b) for (int i=a; i<=b; i++)
 
 void Print_Vector(vector<int> &array, int size)
 {
@@ -38,7 +38,7 @@ void diceSum(int n,vector<int> &soFar,int desiredSum)
 
 	else if (n>0)
 	{
-		FR(i,1,6)
+		fr(i,1,6)
 		{
 			soFar.push_back(i);
 			diceSum(n-1,soFar,desiredSum);
@@ -67,7 +67,7 @@ void diceSumOpt1(int n,vector<int> &soFar,int sum,int desiredSum)
 
 	else if (sum+1*n <= desiredSum && sum+6*n >= desiredSum)
 	{
-		FR(i,1,6)
+		fr(i,1,6)
 		{
 			soFar.push_back(i);
 			diceSumOpt1(n-1,soFar,sum+i,desiredSum);
@@ -87,7 +87,7 @@ void diceSumOpt2(int n,vector<int> &soFar,int sum,int desiredSum,int minDieValue
 
 	else if (sum+1*n <= desiredSum && sum+6*n >= desiredSum)
 	{
-		FR(i,minDieValue,6)
+		fr(i,minDieValue,6)
 		{
 			soFar.push_back(i);
 			diceSumOpt2(n-1,soFar,sum+i,desiredSum,i);

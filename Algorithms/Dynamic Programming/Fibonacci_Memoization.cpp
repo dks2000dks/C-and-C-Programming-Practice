@@ -16,7 +16,7 @@
 #include <bitset>
 #include<bits/stdc++.h>
 using namespace std;
-#define FR(i, a, b) for (int i=a; i<=b; i++)
+#define fr(i, a, b) for (int i=a; i<=b; i++)
 
 #define NIL -1
 #define MAX 100
@@ -27,7 +27,7 @@ int table[MAX];
 void _initialise()
 {
 	int i;
-	FR(i,0,MAX-1)
+	fr(i,0,MAX-1)
 	{
 		table[i] = NIL;
 	}

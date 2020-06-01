@@ -18,7 +18,7 @@ https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
-#define FR(i, a, b) for (int i=a; i<=b; i++)
+#define fr(i, a, b) for (int i=a; i<=b; i++)
 
 void Input_Vector(vector<int> &array, int size)
 {
@@ -37,7 +37,7 @@ int LIS(vector<int> &elements, int start, int end, int *maxlength)
 	int maxindexlength=1;
 	int result = 1;
 
-	FR(i,start,end-1)
+	fr(i,start,end-1)
 	{
 		result = LIS(elements,start,i,maxlength);
 		if (elements[i] < elements[end] && result+1> maxindexlength)
