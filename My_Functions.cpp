@@ -19,7 +19,6 @@ typedef long long int ll;
 // Version-1 for Input_Vector
 void Input_Vector(vector<int> &array, int size)
 {
-	int x;
 	for (int i = 0; i < size; i++)
 	{
 		cin >> x;
@@ -30,12 +29,23 @@ void Input_Vector(vector<int> &array, int size)
 // Version-2 for Input_Vector
 void Input_Vector(vector<int> &array, int size)
 {
-	int x;
 	for (int i = 0; i < size; i++)
 	{
 		cin >> array[i];
 	}
 }
+
+void Input_Matrix(vector<vector<int>> &v, int m, int n)
+{
+	for (int i = 0; i < m; i++)
+	{
+		for (int j=0; j<n; j++)
+		{
+			cin >> v[i][j];
+		}
+	}
+}
+
 
 void Print_Vector(vector<int> &array, int size)
 {
