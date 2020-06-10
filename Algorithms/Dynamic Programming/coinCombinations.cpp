@@ -57,13 +57,11 @@ int coinCombinationsunique(vector<int> &v, int m){
 	return table[m][v.size()];
 }
 
-
-
 int main(){
 	int n,m;
 	cin >> n >> m;
 	vector<int> v(n);
 	Input_Vector(v,n);
 
-	cout << coinCombinationsunique(v,m) << endl;
+	cout << coinCombinations(v,m) << endl;
 }

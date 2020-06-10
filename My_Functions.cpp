@@ -15,6 +15,7 @@
 using namespace std;
 typedef long long int ll;
 #define fr(i, a, b) for (int i=a; i<=b; i++)
+#define vec2d(v,n,m,init) vector<vector<int>> v(n, vector<int>(m,init))
 
 // Version-1 for Input_Vector
 void Input_Vector(vector<int> &array, int size)
@@ -274,7 +275,6 @@ int Transpose_Matrix(vector< vector<int> > &mato, vector< vector<int> > &matt, i
 
 int Output_Matrix(vector< vector<int> > &mat, int n, int m)
 {
-	int x;
 	for (int i=0;i<n;i++)
 	{
 		for (int j =0;j<m;j++)
