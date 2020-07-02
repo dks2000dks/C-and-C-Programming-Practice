@@ -22,7 +22,7 @@ void Print_Array(int *array, int size)
 	}
 }
 
-void Bubble_Sort(int *a, int n)
+void BubbleSort(int *a, int n)
 {
 	for(int i=0;i<n;i++)
 	{
@@ -58,7 +58,7 @@ int main()
 	int k[n] = {};
 	Input_Array(k,n);
 
-	Bubble_Sort(k,n);
+	BubbleSort(k,n);
 
 	Print_Array(k,n);
 	cout << endl;

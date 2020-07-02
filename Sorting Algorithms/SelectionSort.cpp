@@ -27,7 +27,7 @@ void Print_Array(int *array, int size)
 }
 
 
-void Selection_Sort(int *array, int size)
+void SelectionSort(int *array, int size)
 {
 	int i, j, imin;
 	
@@ -52,6 +52,6 @@ int main ()
 	int a[n];
 	
 	Input_Array(a,n);
-	Selection_Sort(a,n);
+	SelectionSort(a,n);
 	Print_Array(a,n);
 }

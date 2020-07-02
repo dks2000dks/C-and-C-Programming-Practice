@@ -19,7 +19,7 @@ void Print_Array(int *array, int size)
 }
 
 
-void Insertion_Sort(int *array, int size)
+void InsertionSort(int *array, int size)
 {
 	int i, j, min;
 	
@@ -45,6 +45,6 @@ int main ()
 	int a[n];
 	
 	Input_Array(a,n);
-	Insertion_Sort(a,n);
+	InsertionSort(a,n);
 	Print_Array(a,n);
 }

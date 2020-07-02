@@ -86,7 +86,6 @@ int main()
 	int Data[n];
 
 	Input_Array(Data,n);
-	cout << "---------" << endl;
 	HeapSort(Data,n);
 	Print_Array(Data,n);
 }
