@@ -16,6 +16,7 @@ Implementation fo different Data Structures.
 1. Linked List
 2. Stacks
 3. Queues
+4. Binary Tree
 
 ## Algorithms
 Implemention of different Algorithms.
