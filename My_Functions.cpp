@@ -18,6 +18,14 @@ typedef long long int ll;
 #define vec1d(v,T,n,init) vector<T> v(n,init)
 #define vec2d(v,T,n,m,init) vector<vector<T>> v(n, vector<T>(m,init))
 
+// Node
+class Node{
+public:
+    int data;
+    Node* left;
+    Node* right;
+}
+
 // Version-1 for Input_Vector
 void Input_Vector(vector<int> &array, int size){
 	for (int i = 0; i < size; i++){
