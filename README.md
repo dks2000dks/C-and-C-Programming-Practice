@@ -12,11 +12,14 @@ Codes of Problems from Codechef Contests and Practice Problems.
 Implementation of different Sorting Algorithms.
 
 ## Data Structures
-Implementation fo different Data Structures.
+Learning different Data Structures.
 1. Linked List
 2. Stacks
 3. Queues
 4. Binary Tree
+5. Binary Search Tree
+6. Hashing
+7. Disjoint Sets
 
 ## Algorithms
 Implemention of different Algorithms.
