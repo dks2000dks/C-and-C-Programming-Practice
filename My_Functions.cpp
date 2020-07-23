@@ -24,17 +24,8 @@ public:
     int data;
     Node* left;
     Node* right;
-}
+};
 
-// Version-1 for Input_Vector
-void Input_Vector(vector<int> &array, int size){
-	for (int i = 0; i < size; i++){
-		cin >> x;
-		array.push_back(x);
-	}
-}
-
-// Version-2 for Input_Vector
 void Input_Vector(vector<int> &array, int size){
 	for (int i = 0; i < size; i++){
 		cin >> array[i];
@@ -56,6 +47,10 @@ void Print_Vector(vector<int> &array, int size){
 	cout << endl;
 }
 
+int isvalid(int x, int y, int r, int c){
+    return (x>=0 && x<r && y>=0 && y<c);
+}
+
 int Transpose_Matrix(vector< vector<int> > &mato, vector< vector<int> > &matt, int n, int m){
 	int x;
 	for (int i=0;i<m;i++){
@@ -66,7 +61,7 @@ int Transpose_Matrix(vector< vector<int> > &mato, vector< vector<int> > &matt, i
 	}
 }
 
-int Output_Matrix(vector< vector<int> > &mat, int n, int m){
+int Print_Matrix(vector< vector<int>> &mat, int n, int m){
 	for (int i=0;i<n;i++){
 		for (int j =0;j<m;j++){
 			cout << mat[i][j] << " ";
