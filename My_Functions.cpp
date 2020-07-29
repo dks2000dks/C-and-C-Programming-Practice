@@ -18,6 +18,14 @@ typedef long long int ll;
 #define vec1d(v,T,n,init) vector<T> v(n,init)
 #define vec2d(v,T,n,m,init) vector<vector<T>> v(n, vector<T>(m,init))
 
+int main(){
+    int t;
+    cin >> t;
+    while(t--){
+        
+    }
+}
+
 // Node
 class Node{
 public:
