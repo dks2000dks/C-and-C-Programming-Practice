@@ -55,9 +55,73 @@ void Print_Vector(vector<int> &array, int size){
 	cout << endl;
 }
 
+int Print_Matrix(vector< vector<int>> &mat, int n, int m){
+	for (int i=0;i<n;i++){
+		for (int j =0;j<m;j++){
+			cout << mat[i][j] << " ";
+		}
+		cout << endl;
+	}
+}
+
+// -----------------------Operations-----------------------//
+
+int nCr(int n,int r){
+    int output = 1;
+    if (n - r < r) 
+        r = n - r; 
+  
+    for(int i=n-r+1;i<=n;i++){
+        output = output*(i)/(i-n+r);
+    }
+    return output;
+}
+
+int nPr(int n,int r){
+    int output = 1;
+    if (n - r < r) 
+        r = n - r; 
+  
+    for(int i=n-r+1;i<=n;i++){
+        output = output*(i);
+    }
+    return output;
+}
+
 int isvalid(int x, int y, int r, int c){
     return (x>=0 && x<r && y>=0 && y<c);
 }
+
+bool isPrime(int n) {  
+    if (n <= 1) 
+        return false; 
+    if (n <= 3) 
+        return true; 
+  
+    if (n % 2 == 0 || n % 3 == 0) 
+        return false; 
+  
+    for (int i = 5; i * i <= n; i = i + 6) 
+        if (n % i == 0 || n % (i + 2) == 0) 
+            return false; 
+  
+    return true; 
+} 
+
+int gcd(int a, int b) {
+    if (a == 0) 
+       return b; 
+    if (b == 0) 
+       return a; 
+
+    if (a == b) 
+        return a; 
+
+    if (a > b) 
+        return gcd(a%b, b); 
+
+    return gcd(a, b%a); 
+} 
 
 int Transpose_Matrix(vector< vector<int> > &mato, vector< vector<int> > &matt, int n, int m){
 	int x;
@@ -69,32 +133,11 @@ int Transpose_Matrix(vector< vector<int> > &mato, vector< vector<int> > &matt, i
 	}
 }
 
-int Print_Matrix(vector< vector<int>> &mat, int n, int m){
-	for (int i=0;i<n;i++){
-		for (int j =0;j<m;j++){
-			cout << mat[i][j] << " ";
-		}
-		cout << endl;
-	}
-}
 vector<int> SubVector(vector<int> const &v, int m, int n){
 	auto first = v.begin() + m;
 	auto last = v.begin() + n + 1;
 	vector<int> vector(first, last);
 	return vector;
-}
-
-void Input_Array(int *array, int size){
-	for (int i = 0; i < size; i++){
-		cin >> array[i];
-	}
-}
-
-void Print_Array(int *array, int size){
-	for (int i = 0; i < size; i++){
-		cout << array[i] << " ";
-	}
-	cout << endl;
 }
 
 int Count_Find(string str,char find){
@@ -119,21 +162,6 @@ void Multiply_Element_Array(int *array, int size, int m){
 	for (int i = 0; i < size; i++){
 		array[i] =  m*array[i];
 	}
-}
-
-void Input_Two_Array(int *array, int *arr, int size){
-	for (int i = 0; i < size; i++){
-		cin >> array[i];
-		cin >> arr[i];
-	}
-}
-
-int Sum_elements_Array(int *array, int size){
-	int o = 0;
-	for (int i = 0; i < size; i++){
-		o += array[i];
-	}
-	return o;
 }
 
 int factorial(int t){
@@ -175,62 +203,16 @@ void swapping_elements_array(int &a, int &b){
 	b = x;
 }
 
-void SelectionSort(int *array, int size){
-
-	int i, j, imin;
-	
-	for(i = 0; i<size-1; i++){
-		imin = i;
-
-		for(j = i+1; j<size; j++){
-        	if(array[j] < array[imin])
-            	imin = j;
-		}
-		swap(array[i], array[imin]);
-	}
-}
-
-int Find_Index(int *array, int size,int find){
-	int o;
-	for (int i = 0;i < size; i++){
-		if (find == array[i]){
-			o = i;
-			i = size;
-		}
-	}
-	return o;
-}
-
-int Fibonacci(int N){
-	int o[N];
+vector<int> Fibonacci(int N){
+	vector<int> o(N+1,0);
 
 	o[0] = 0;
 	o[1] = 1;
 
-	for(int i=2;i<N;i++){
+	for(int i=2;i<=N;i++){
 		o[i] = o[i-1] + o[i-2];
 	}
-	return o;
-}
 
-int IsPrime(int n){
-	int o=1;
-
-	if (n%2 == 0 && n!= 2) 
-		o = 0;
-  
-	for (int i = 3; i < sqrt(n) + 1; i = i+2) 
-		if (n % i == 0) 
-			o = 0; 
-  
-    return o; 
-}
-
-int Sum_elements_Vector(vector<int> array, int size){
-	int o = 0;
-	for (int i = 0; i < size; i++){
-		o += array[i];
-	}
 	return o;
 }
 
