@@ -17,41 +17,11 @@ typedef long long int ll;
 #define fr(i, a, b) for (int i=a; i<=b; i++)
 #define vec1d(v,T,n,init) vector<T> v(n,init)
 #define vec2d(v,T,n,m,init) vector<vector<T>> v(n, vector<T>(m,init))
-
-int main(){
-    int t;
-    cin >> t;
-    while(t--){
-        
-    }
-}
-
-// Node
-class Node{
-public:
-    int data;
-    Node* left;
-    Node* right;
-};
+#define p 1000000007;
 
 void Input_Vector(vector<int> &array, int size){
 	for (int i = 0; i < size; i++){
 		cin >> array[i];
-	}
-}
-
-void Print_Vector(vector<int> &array, int size){
-	for (int i = 0; i < size; i++){
-		cout << array[i] << " ";
-	}
-	cout << endl;
-}
-
-void Input_Matrix(vector<vector<int>> &v, int m, int n){
-	for (int i = 0; i < m; i++){
-		for (int j=0; j<n; j++){
-			cin >> v[i][j];
-		}
 	}
 }
 
@@ -64,9 +34,39 @@ int Print_Matrix(vector< vector<int>> &mat, int n, int m){
 	}
 }
 
-vector<int> SubVector(vector<int> const &v, int m, int n){
-	auto first = v.begin() + m;
-	auto last = v.begin() + n + 1;
-	vector<int> vector(first, last);
-	return vector;
+int Compute(vector<int> &v, int n, int k){
+    vec2d(dp,int,n+1,k+1,0);
+
+    fr(i,0,n){
+        fr(j,0,k){
+            if (j==0)
+                dp[i][j] = 1;
+            else if (i==0)
+                dp[i][j] = 0;
+
+            else{
+                dp[i][j] = dp[i-1][j];
+
+                if (j - v[i-1] >= 0)
+                    dp[i][j] = (dp[i][j] + dp[i-1][j-v[i-1]])%p;
+            }
+        }
+    }
+    //Print_Matrix(dp,n+1,k+1);
+    return (dp[n][k])%p;
+}
+
+int main(){
+    int T;
+    cin >> T;
+
+    while(T--){
+        int n,k;
+        cin >> n;
+        vec1d(v,int,n,0);
+        Input_Vector(v,n);
+        cin >> k;
+
+        cout << Compute(v,n,k) << endl;
+    }
 }

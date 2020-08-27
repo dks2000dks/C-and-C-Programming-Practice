@@ -18,6 +18,21 @@ typedef long long int ll;
 #define vec1d(v, T, n, init) vector<T> v(n, init)
 #define vec2d(v, T, n, m, init) vector<vector<T>> v(n, vector<T>(m, init))
 
+// Binary Search 
+int BinarySearch(vector<int> v, int l, int r, int search){
+	while(l<=r){
+		int m = (l+r)/2;
+		if (v[m] == search)
+			return m;
+		else if (v[m] > search)
+			r = m-1;
+		else
+			l = m+1;
+	}
+	return -1;
+}
+
+
 // 2-Sum Problem.
 // Checking if Sum of any 2 Elements in Array is equal to given value or Not
 bool isPairPresent(vector<int> v, int target)

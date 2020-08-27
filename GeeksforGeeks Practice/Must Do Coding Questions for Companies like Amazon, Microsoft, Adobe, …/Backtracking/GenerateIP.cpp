@@ -18,7 +18,40 @@ typedef long long int ll;
 #define vec1d(v,T,n,init) vector<T> v(n,init)
 #define vec2d(v,T,n,m,init) vector<vector<T>> v(n, vector<T>(m,init))
 
-vector<string> genIp(string &s);
+bool isValid(string s) {
+    if (s.size() > 1 && s[0]  ==  '0')
+        return false;
+    if (stoi(s) <= 255 && stoi(s) >= 0)
+        return true;
+    else
+        return false;
+}
+
+vector<string> genIp(string &s) {
+    vector<string> ans;
+    if (s.size() > 12 || s.size() < 4)
+        return ans;
+
+    for (int i = 1; i < 4; i++) {
+        string first  =  s.substr(0, i);
+        if (!isValid(first))
+            continue;
+        for (int j = 1; i + j < s.size() && j < 4; j++) {
+            string second  =  s.substr(i, j);
+            if (!isValid(second))
+                continue;
+            for (int k = 1; i + j + k < s.size() && k < 4; k++) {
+                string third = s.substr(i + j, k);
+                string fourth = s.substr(i + j + k);
+                if (isValid(third) && isValid(fourth)) {
+                    string current  =  first + "." + second + "." + third + "." + fourth;
+                    ans.push_back(current);
+                }
+            }
+        }
+    }
+    return ans;
+}
 
 int main() {
     int T;
@@ -31,50 +64,6 @@ int main() {
         sort(str.begin(), str.end());
         for (auto &u : str) {
             cout << u << "\n";
-        }
-    }
-}
-
-int isvalid(string s){
-    string p="";
-
-    for(int i=0;i<=s.length();i++){
-        if (s[i] == '.' || i==s.length()){
-            if (p[0] == '0' && p.length() > 1)
-                return 0;
-
-            if (stoi(p) > 255)
-                return 0;
-
-            p = "";
-        }
-
-        else{
-            p += s[i];
-        }
-    }
-    return 1;
-}
-
-vector<string> genIp(string &s) {
-    int n = s.length();
-    vector<string>output;
-
-    // Max IPv4-IP Possible 255.255.255.255
-    if (n>12)
-        return output;
-
-    for(int i=0; i<=n-4; i++){
-        for(int j=i+1;j<=n-3;j++){
-            for(int k=j+1;k<=n-2;k++){
-                string ip = s;
-                ip.insert(i+1,".");
-                ip.insert(j+2,".");
-                ip.insert(k+3,".");
-
-                if (isvalid(ip))
-                    output.push_back(ip);
-            }
         }
     }
 }

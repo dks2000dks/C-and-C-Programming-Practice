@@ -40,6 +40,32 @@ vector<int> inOrder(Node *root){
     return left;
 }
 
+int CountNodes(Node *root){
+    if (!root)
+        return 0;
+        
+    int count = CountNodes(root->left);
+    count++;
+    count += CountNodes(root->right);
+
+    return count;
+}
+
+void Mirror(Node* node) {
+     
+     if (node == NULL)
+        return;
+        
+     Mirror(node->right);
+     Mirror(node->left);
+     
+     Node* leftpart = node->left;
+     
+     node->left = node->right;
+     node->right = leftpart;
+     
+}
+
 // Check if Tree is a Binary Search Tree
 int isBSTUntil(Node* node, int min, int max){
     if (node==NULL)
@@ -105,5 +131,5 @@ void levelOrder(Node* root)
     { 
         traverseLevel(root, i); 
         cout << "$" << " "; 
-    } 
+    }
 }
