@@ -18,40 +18,52 @@ typedef long long int ll;
 #define vec1d(v,T,n,init) vector<T> v(n,init)
 #define vec2d(v,T,n,m,init) vector<vector<T>> v(n, vector<T>(m,init))
 
-void Input_Vector(vector<ll> &array, int size){
+void Input_Vector(vector<int> &array, int size){
 	for (int i = 0; i < size; i++){
 		cin >> array[i];
 	}
 }
 
-void Print_Vector(vector<ll> &array, int size){
-	for (int i = 0; i < size; i++){
-		cout << array[i] << " ";
-	}
-	cout << endl;
-}
+int Compute(vector<int> &v, int n){
+    vec1d(left,int,n,0);
+    vec1d(right,int,n,0);
 
-void Compute(vector<ll> &v){
-    int n = v.size();
+    left[0] = 1;
+    right[n-1] = 1;
 
-    fr(i,0,n-1){
-        v[i] = v[i] + (n * (v[v[i]] % n));
+    fr(i,1,n-1){
+        if (v[i-1] < v[i])
+            left[i] = left[i-1] + 1;
+        else
+            left[i] = 1;
     }
 
-    fr(i,0,n-1){
-        v[i] = v[i]/n;
+    for(int i=n-2;i>=0;i--){
+        if (v[i+1] < v[i])
+            right[i] = right[i+1] + 1;
+        else
+            right[i] = 1;
     }
+
+    int count = 0;
+
+    fr(i,0,n-1){
+        count += max(left[i],right[i]);
+    }
+
+    return count;
 }
 
 int main(){
-    int t;
-    cin >> t;
-    while(t--){
+    int T;
+    cin >> T;
+
+    while(T--){
         int n;
         cin >> n;
-        vec1d(v,ll,n,0);
+        vec1d(v,int,n,0);
         Input_Vector(v,n);
-        Compute(v);
-        Print_Vector(v,n);
+        cout << Compute(v,n) << endl;
+
     }
 }

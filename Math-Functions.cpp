@@ -29,6 +29,19 @@ int nCr(int n,int r){
     return output;
 }
 
+// For Large Calculations
+int nCr(int n,int r){
+    int p = pow(10,9) + 7;
+    vec1d(C,ll,r+1,0);
+ 
+    C[0] = 1;
+    for (int i=1; i<=n; i++){
+        for (int j = min(i, r); j > 0; j--)
+            C[j] = (C[j] + C[j-1])%p;
+    }
+    return C[r];
+}
+
 int nPr(int n,int r){
     int output = 1;
     if (n - r < r) 
@@ -42,6 +55,30 @@ int nPr(int n,int r){
 
 int isvalid(int x, int y, int r, int c){
     return (x>=0 && x<r && y>=0 && y<c);
+}
+
+bool isOperation(char c){
+    if (c=='+' || c=='-' || c=='*' || c=='/' || c=='^' || c=='%')
+        return true;
+    return false;
+}
+
+int PrimeSieve(int n){
+    vec1d(prime,bool,n+1,true);
+
+    for(int p=2; p*p <= n; p++){
+        if (prime[p] == true){
+            for(int i=p*p; i<=n; i+=p)
+                prime[i] = false;
+        }
+    }
+
+    int count = 0;
+    fr(p,2,n){
+        if (prime[p])
+            count++;
+    }
+    return count;
 }
 
 bool isPrime(int n) {  

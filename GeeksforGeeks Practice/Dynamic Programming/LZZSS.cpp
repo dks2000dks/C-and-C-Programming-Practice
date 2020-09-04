@@ -18,40 +18,40 @@ typedef long long int ll;
 #define vec1d(v,T,n,init) vector<T> v(n,init)
 #define vec2d(v,T,n,m,init) vector<vector<T>> v(n, vector<T>(m,init))
 
-void Input_Vector(vector<ll> &array, int size){
-	for (int i = 0; i < size; i++){
-		cin >> array[i];
+void Input_Vector(vector<int> &v, int n){
+	for (int i = 0; i < n; i++){
+		cin >> v[i];
 	}
 }
 
-void Print_Vector(vector<ll> &array, int size){
-	for (int i = 0; i < size; i++){
-		cout << array[i] << " ";
-	}
-	cout << endl;
-}
-
-void Compute(vector<ll> &v){
-    int n = v.size();
-
-    fr(i,0,n-1){
-        v[i] = v[i] + (n * (v[v[i]] % n));
-    }
-
-    fr(i,0,n-1){
-        v[i] = v[i]/n;
-    }
+int Signum(int n){
+    if (n!=0)
+        return n > 0 ? 1 : -1;
+    else
+        return 0;
 }
 
 int main(){
-    int t;
-    cin >> t;
-    while(t--){
+    int T;
+    cin >> T;
+
+    while(T--){
         int n;
         cin >> n;
-        vec1d(v,ll,n,0);
+        vec1d(v,int,n,0);
         Input_Vector(v,n);
-        Compute(v);
-        Print_Vector(v,n);
+
+        int prevsign = 0;
+        int l = 1;
+
+        fr(i,1,n-1){
+            int sign = Signum(v[i] - v[i-1]);
+
+            if (sign != prevsign && sign != 0){
+                prevsign = sign;
+                l++;
+            }
+        }
+        cout << l << endl;
     }
 }

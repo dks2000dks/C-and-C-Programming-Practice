@@ -82,3 +82,26 @@ vector<int> MergingSortedArrays(vector<int> &v1, vector<int> &v2){
     }
     return v;
 }
+
+// Maximum Rectangle in Histogram
+int maxHist(vector<int> &a) {
+        int m = a.size(), ans=0;
+        stack<int> s;
+        for(int j=0; j<m; j++) {
+            if(s.empty() || a[s.top()]<a[j]) s.push(j);
+            else {
+                while(!s.empty() && a[s.top()]>=a[j]) {
+                    int ht= a[s.top()]; s.pop();
+                    if(!s.empty()) ans= max(ans, (j-s.top()-1)*ht);
+                    else ans= max(ans, j*ht);
+                }
+                s.push(j);
+            }
+        }
+        while(!s.empty()) {
+            int ht= a[s.top()]; s.pop();
+            if(!s.empty()) ans= max(ans, (m-s.top()-1)*ht);
+            else ans= max(ans, m*ht);
+        }
+    return ans;
+}

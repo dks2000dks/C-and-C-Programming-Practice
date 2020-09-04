@@ -66,6 +66,20 @@ void Mirror(Node* node) {
      
 }
 
+Node* LCA(Node* root, int a, int b){
+    if (root == NULL || root->data == a || root->data == b)
+        return root;
+    Node* left = LCA(root->left,a,b);
+    Node* right = LCA(root->right,a,b);
+
+    if (right && left)
+        return root;
+    else if (left == NULL)
+        return right;
+    else
+        return left;
+}
+
 // Check if Tree is a Binary Search Tree
 int isBSTUntil(Node* node, int min, int max){
     if (node==NULL)

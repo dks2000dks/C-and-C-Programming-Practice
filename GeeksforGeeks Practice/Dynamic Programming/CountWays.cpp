@@ -18,40 +18,30 @@ typedef long long int ll;
 #define vec1d(v,T,n,init) vector<T> v(n,init)
 #define vec2d(v,T,n,m,init) vector<vector<T>> v(n, vector<T>(m,init))
 
-void Input_Vector(vector<ll> &array, int size){
-	for (int i = 0; i < size; i++){
-		cin >> array[i];
-	}
-}
+int Compute(int n){    
+    if (n <= 2)
+        return n;
 
-void Print_Vector(vector<ll> &array, int size){
-	for (int i = 0; i < size; i++){
-		cout << array[i] << " ";
-	}
-	cout << endl;
-}
+    vec1d(dp,int,n+1,0);
+    int p = pow(10,9)+7;
+    
+    dp[0] = 0;
+    dp[1] = 1;
+    dp[2] = 2;
 
-void Compute(vector<ll> &v){
-    int n = v.size();
-
-    fr(i,0,n-1){
-        v[i] = v[i] + (n * (v[v[i]] % n));
+    fr(i,3,n){
+        dp[i] = (dp[i-1] + dp[i-2])%p;
     }
-
-    fr(i,0,n-1){
-        v[i] = v[i]/n;
-    }
+    return (dp[n])%p;
 }
 
 int main(){
-    int t;
-    cin >> t;
-    while(t--){
+    int T;
+    cin >> T;
+
+    while(T--){
         int n;
         cin >> n;
-        vec1d(v,ll,n,0);
-        Input_Vector(v,n);
-        Compute(v);
-        Print_Vector(v,n);
+        cout << Compute(n) << endl;
     }
 }
