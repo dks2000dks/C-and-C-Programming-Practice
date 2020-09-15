@@ -118,3 +118,40 @@ char XOR(char a,char b){
 	else
 		return '1';
 }
+
+double Mean(vector<int> v){
+    int n = v.size();
+    return (accumulate(v.begin(),v.end(),0))/(n*1.0);
+}
+
+double Median(vector<int> v){
+    int n = v.size();
+    sort(v.begin(),v.end());
+
+    if (n%2 == 1)
+        return 1.0 * v[n/2];
+    else
+        return 0.5 * (v[(n/2) - 1]) + 0.5 * (v[n/2]);
+}
+
+int Mode(vector<int> &v){
+    int n = v.size();
+    map<int,int> mp;
+
+    fr(i,0,n-1){
+        mp[v[i]]++;
+    }
+
+    int maxfreq = 0;
+    for(auto i:mp)
+        maxfreq = max(maxfreq,i.second);
+
+    int minelement = INT_MAX;
+    
+    for(auto i:mp){
+        if (i.second == maxfreq)
+            minelement = min(i.first,minelement);
+    }
+
+    return minelement;
+}

@@ -68,6 +68,5 @@ vector<int> KMP(string s, string p){
                 i++;            
         }
     }
-
     return o;
 }

@@ -32,7 +32,7 @@ int Compute(vector<int> &v, int n){
             int j = i+l-1;
             dp[i][j] = INT_MAX;
             fr(k,i,j-1){
-                dp[i][j] = min( dp[i][j], (dp[i][k] + dp[k+1][j] + (v[i-1] * v[k] * v[j])) );
+                dp[i][j] = min(dp[i][j], (dp[i][k] + dp[k+1][j] + (v[i-1] * v[k] * v[j])) );
             }
         }
     }
