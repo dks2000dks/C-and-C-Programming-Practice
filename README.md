@@ -1,12 +1,15 @@
 # C-and-Cpp-Programming-Practice
-Practicing C and C++ in Codechef and taking many different tasks.
+Practicing C and C++.
 
 ## Basics
 Learning Basics of C++
 1. Pointers
 
 ## Codechef
-Codes of Problems from Codechef Contests and Practice Problems.
+Practice Problems and Participating Contests on Codechef.
+
+## GeeksforGeeks
+Practicing Competitive Coding from GeeksforGeeks.
 
 ## Sorting Algorithms
 Implementation of different Sorting Algorithms.
