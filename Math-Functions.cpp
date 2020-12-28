@@ -8,13 +8,14 @@
 #include <iomanip>
 #include <limits.h>
 #include <string>
-#include <math.h> 
+#include <math.h>
 #include <float.h>
 #include <bitset>
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
 #define fr(i, a, b) for (int i=a; i<=b; i++)
+#define br(i, a, b) for (int i=a; i>=b; i--)
 #define vec1d(v,T,n,init) vector<T> v(n,init)
 #define vec2d(v,T,n,m,init) vector<vector<T>> v(n, vector<T>(m,init))
 
@@ -152,6 +153,23 @@ int Mode(vector<int> &v){
         if (i.second == maxfreq)
             minelement = min(i.first,minelement);
     }
-
     return minelement;
+}
+
+vector<int> Num2Binary(int n){
+    vector<int> o;
+    while (n>0){
+        o.push_back(n%2);
+        n = n/2;
+    }
+    reverse(o.begin(),o.end());
+    return o;
+}
+
+int Binary2Num(vector<int> v){
+    int o = 0;
+    fr(i,0,v.size()-1){
+        o += (pow(2,i) * v[v.size()-1-i]);
+    }
+    return o;
 }
