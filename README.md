@@ -5,17 +5,11 @@ Practicing C and C++.
 Learning Basics of C++
 1. Pointers
 
-## Codechef
-Practice Problems and Participating Contests on Codechef.
-
-## GeeksforGeeks
-Practicing Competitive Coding from GeeksforGeeks.
-
 ## Sorting Algorithms
 Implementation of different Sorting Algorithms.
 
 ## Data Structures
-Learning different Data Structures.
+Learning Data Structures.
 1. Linked List
 2. Stacks
 3. Queues
@@ -23,11 +17,24 @@ Learning different Data Structures.
 5. Binary Search Tree
 6. Hashing
 7. Disjoint Sets
+8. Graphs
 
 ## Algorithms
-Implemention of different Algorithms.
+Learning Algorithms.
 1. Divide and Conquer
 2. Dynamic Programming
 3. Backtracking
-4. Greedy Algorithms
+4. Greedy
 5. Binary Search
+
+## Codechef
+Practice Problems and Participating Contests on Codechef.
+
+## Codeforces
+Practice Problems and Participating Contests on Codeforces.
+
+## GeeksforGeeks
+Practicing Competitive Coding from GeeksforGeeks.
+
+## Practice
+Practicing Competitive Coding from various other sources.
