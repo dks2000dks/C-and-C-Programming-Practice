@@ -20,6 +20,8 @@ typedef long long int ll;
 #define vec2d(v,T,n,m,init) vector<vector<T>> v(n, vector<T>(m,init))
 
 int main(){
+	ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+	
     int t;
     cin >> t;
     while(t--){
@@ -56,7 +58,7 @@ void Input_Matrix(vector<vector<int>> &v, int m, int n){
 	}
 }
 
-int Print_Matrix(vector< vector<int>> &v, int n, int m){
+void Print_Matrix(vector< vector<int>> &v, int n, int m){
 	for (int i=0;i<n;i++){
 		for (int j=0;j<m;j++){
 			cout << v[i][j] << " ";
