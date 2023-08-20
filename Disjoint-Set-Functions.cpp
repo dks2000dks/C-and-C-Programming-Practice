@@ -6,7 +6,7 @@
 #include <vector>
 #include <sstream>
 #include <iomanip>
-#include <limits.h>
+#include <limits>
 #include <string>
 #include <math.h>
 #include <float.h>

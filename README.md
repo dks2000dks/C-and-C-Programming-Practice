@@ -3,7 +3,7 @@ Practicing C and C++.
 
 ## Learning
 ### Basics
-Learning Basics of C++
+Learning Basics of C++.
 1. Pointers
 
 ### Sorting Algorithms
@@ -37,8 +37,3 @@ Practice Problems and Participating Contests on Codechef.
 ### Codeforces
 Practice Problems and Participating Contests on Codeforces.
 
-### GeeksforGeeks Practice
-Practicing Competitive Coding from GeeksforGeeks.
-
-### Online Practice
-Practicing Competitive Coding from various other sources.
