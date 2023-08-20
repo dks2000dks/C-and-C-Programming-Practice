@@ -1,13 +1,13 @@
 # C-and-Cpp-Programming-Practice
 Practicing C and C++.
 
-## Learning
+## Learn
 ### Basics
 Learning Basics of C++.
 1. Pointers
 
 ### Sorting Algorithms
-Implementation of different Sorting Algorithms.
+Implementation of different sorting algorithms.
 
 ### Data Structures
 Learning Data Structures.
